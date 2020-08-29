@@ -76,7 +76,9 @@ class Idcard
     public function getInfo ($cardNum)
     {
     	if (!self::checkIdCardNum($cardNum)) throw new \Exception("身份证号码格式有误!");
-    	
+    	// 验证通过 15位强制转为18位
+        strlen($cardNum) != 18 && $cardNum = self::cardNumTo18($cardNum);
+
         $info = [];
         // 获取出生年月日
         $y = (int)substr($cardNum, 6, 4);

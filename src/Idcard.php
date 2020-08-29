@@ -75,7 +75,7 @@ class Idcard
     */
     public function getInfo ($cardNum)
     {
-    	if (!self::_checkIdCardNum($cardNum)) throw new \Exception("身份证号码格式有误!");
+    	if (!self::checkIdCardNum($cardNum)) throw new \Exception("身份证号码格式有误!");
     	
         $info = [];
         // 获取出生年月日

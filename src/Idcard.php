@@ -156,7 +156,7 @@ class Idcard
      */
     public static function cardNumTo18($cardNum)
     { 
-        if(strlen($cardNum) != 15 || !self::_checkIdCardNum($cardNums)) throw new \Exception('身份证号校验失败');
+        if(strlen($cardNum) != 15 || !self::_checkIdCardNum($cardNum)) throw new \Exception('身份证号校验失败');
 
         # 获取年份前两位 如果身份证顺序码是996 997 998 999，这些是为百岁以上老人的特殊编码 
         $y = array_search(substr($cardNum, 12, 3), ['996', '997', '998', '999']) !== false ? '18' : '19';

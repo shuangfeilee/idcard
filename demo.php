@@ -3,9 +3,11 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use mfunc\Idcard;
 
+// 检测身份证号
+var_dump(Idcard::checkIdCardNum('45263119860919006X'));
+
 try {
 	$idcard = new Idcard();
-
 	echo '<pre>';
 	// 生成省份证号码 生成4个，30-36岁的号码
 	var_dump($idcard->makeCardNum(4, 30, 36));
